@@ -1,0 +1,61 @@
+.custom-select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select-element {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  font-weight: 600;
+  background: rgb(61, 106, 255);
+  color: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 35px;
+  min-width: 150px;
+  transition: all 0.2s ease-in;
+}
+
+.custom-select-element:focus {
+  outline: none;
+  box-shadow: 0 0 20px 5px rgba(61, 106, 255, 0.3);
+}
+
+.custom-select-container::after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+  pointer-events: none;
+}
+
+.custom-select-element:hover {
+  background: rgb(41, 86, 235);
+}
+
+.custom-select-element option {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+}
+
+/* For Firefox */
+.custom-select-element::-moz-focus-inner {
+  border: 0;
+}
+
+/* For IE/Edge */
+.custom-select-element::-ms-expand {
+  display: none;
+}

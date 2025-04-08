@@ -1,0 +1,123 @@
+.grid-button {
+  /* Base variables for the green color */
+  --main-color: rgb(46, 213, 115);
+  --main-bg-color: rgba(46, 213, 116, 0.36);
+  --pattern-color: rgba(46, 213, 116, 0.073);
+
+  /* Default hue rotation */
+  filter: hue-rotate(0deg);
+
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size:
+    cover,
+    15px 15px,
+    15px 15px;
+  background-position:
+    center center,
+    center center,
+    center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-width: 1px 0 1px 0;
+  color: var(--main-color);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-button:hover {
+  background-size:
+    cover,
+    10px 10px,
+    10px 10px;
+}
+
+.grid-button:active {
+  filter: hue-rotate(250deg);
+}
+
+/* Color variations using hue-rotate */
+.grid-button.blue {
+  filter: hue-rotate(140deg);
+}
+
+.grid-button.blue:active {
+  filter: hue-rotate(390deg); /* 140 + 250 */
+}
+
+.grid-button.purple {
+  filter: hue-rotate(230deg);
+}
+
+.grid-button.purple:active {
+  filter: hue-rotate(480deg); /* 230 + 250 */
+}
+
+.grid-button.orange {
+  filter: hue-rotate(320deg);
+}
+
+.grid-button.orange:active {
+  filter: hue-rotate(570deg); /* 320 + 250 */
+}
+
+.grid-button.cyan {
+  filter: hue-rotate(180deg);
+}
+
+.grid-button.cyan:active {
+  filter: hue-rotate(430deg); /* 180 + 250 */
+}
+
+.grid-button.red {
+  filter: hue-rotate(290deg);
+}
+
+.grid-button.red:active {
+  filter: hue-rotate(540deg); /* 290 + 250 */
+}
+
+/* Size variations */
+.grid-button.small {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+}
+
+.grid-button.medium {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.3rem;
+}
+
+/* Compact version for tables and small spaces */
+.grid-button.compact {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  background-size:
+    cover,
+    8px 8px,
+    8px 8px;
+}
+
+.grid-button.compact:hover {
+  background-size:
+    cover,
+    6px 6px,
+    6px 6px;
+}

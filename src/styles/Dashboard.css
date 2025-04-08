@@ -1,0 +1,395 @@
+.space-dashboard {
+  padding: 30px 40px;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-container {
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.welcome-alert {
+  background: rgba(30, 30, 80, 0.3);
+  border: none;
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Card content styles */
+.dashboard-card-content-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 10px;
+}
+
+.text-content {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.text-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.text-content p {
+  font-size: 1rem;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+.icon-container {
+  margin-right: 20px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class-icon {
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.calendar-icon {
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.grade-badge {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #ff7043;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+.papers-big-number {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Progress Circle styles */
+.progress-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.progress-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 3;
+}
+
+.progress-circle-value {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.progress-text {
+  fill: rgba(255, 255, 255, 0.95);
+  font-size: 0.5em;
+  font-weight: bold;
+  text-anchor: middle;
+  transform: rotate(90deg);
+  dominant-baseline: middle;
+}
+
+.count-badge {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ff7043;
+}
+
+/* List styles */
+.space-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.space-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.2s ease;
+}
+
+.space-list-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.space-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.space-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.space-badge.warning {
+  background: #ff9800;
+  color: white;
+}
+
+.space-badge.success {
+  background: #4caf50;
+  color: white;
+}
+
+/* Chart container */
+.chart-container {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Exam selector styles */
+.exam-selector {
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.exam-buttons {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.exam-button {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.exam-button.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+.year-selector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.year-label {
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+
+.year-value {
+  font-weight: bold;
+}
+
+.availability {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Table styles */
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.papers-table {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.9rem;
+}
+
+.papers-table th {
+  font-weight: 600;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(30, 30, 80, 0.4);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.papers-table td {
+  padding: 12px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(30, 30, 80, 0.2);
+}
+
+.papers-table tr:hover td {
+  background: rgba(30, 30, 80, 0.3);
+}
+
+.status-badge {
+  padding: 3px 8px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status-badge.planned {
+  background: #4caf50;
+  color: white;
+}
+
+.status-badge.high {
+  background: #f44336;
+  color: white;
+}
+
+.status-badge.medium {
+  background: #ff9800;
+  color: white;
+}
+
+.footer-text {
+  display: none; /* Hide the duplicate footer since we've moved it to the layout */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) {
+  .space-dashboard {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .space-dashboard {
+    padding: 20px;
+  }
+  
+  .text-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .text-content p {
+    font-size: 0.9rem;
+  }
+  
+  .icon-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .progress-circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .space-dashboard {
+    padding: 15px;
+  }
+
+  .dashboard-card-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .icon-container {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .chart-container {
+    min-height: 200px;
+  }
+  
+  .papers-table th, .papers-table td {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .space-dashboard {
+    padding: 10px;
+  }
+
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .space-list-item {
+    padding: 8px 10px;
+    margin-bottom: 8px;
+  }
+  
+  .space-badge {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+}

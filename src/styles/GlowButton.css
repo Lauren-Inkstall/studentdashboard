@@ -1,0 +1,129 @@
+/* Base Glow Button Styles */
+.glow-button {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.glow-button::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.glow-button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+}
+
+.glow-button:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+}
+
+/* Button Size Variations */
+.glow-button.small {
+  padding: 0.5em 1.5em;
+  font-size: 12px;
+}
+
+.glow-button.medium {
+  padding: 0.75em 2em;
+  font-size: 14px;
+}
+
+.glow-button.large {
+  padding: 1.25em 3.5em;
+  font-size: 16px;
+}
+
+/* Color Variations */
+.glow-button.blue {
+  --glow-color: rgb(176, 196, 255);
+  --glow-spread-color: rgba(123, 159, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 218, 255);
+  --btn-color: rgb(61, 81, 136);
+}
+
+.glow-button.green {
+  --glow-color: rgb(176, 255, 188);
+  --glow-spread-color: rgba(123, 255, 143, 0.781);
+  --enhanced-glow-color: rgb(206, 255, 214);
+  --btn-color: rgb(61, 136, 75);
+}
+
+.glow-button.red {
+  --glow-color: rgb(255, 176, 176);
+  --glow-spread-color: rgba(255, 123, 123, 0.781);
+  --enhanced-glow-color: rgb(255, 206, 206);
+  --btn-color: rgb(136, 61, 61);
+}
+
+.glow-button.orange {
+  --glow-color: rgb(255, 217, 176);
+  --glow-spread-color: rgba(255, 191, 123, 0.781);
+  --enhanced-glow-color: rgb(255, 231, 206);
+  --btn-color: rgb(136, 100, 61);
+}
+
+.glow-button.cyan {
+  --glow-color: rgb(176, 255, 249);
+  --glow-spread-color: rgba(123, 255, 247, 0.781);
+  --enhanced-glow-color: rgb(206, 255, 253);
+  --btn-color: rgb(61, 130, 136);
+}
+
+/* Compact version for smaller spaces */
+.glow-button.compact {
+  padding: 0.5em 1em;
+  border-width: 0.15em;
+  box-shadow: 0 0 0.5em .15em var(--glow-color),
+         0 0 2em 0.5em var(--glow-spread-color),
+         inset 0 0 .4em .15em var(--glow-color);
+}
+
+/* Icon button version */
+.glow-button.icon {
+  padding: 0.75em;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Disabled state */
+.glow-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: 0 0 0.3em .1em var(--glow-color),
+         0 0 1em 0.25em var(--glow-spread-color),
+         inset 0 0 .2em .1em var(--glow-color);
+}
